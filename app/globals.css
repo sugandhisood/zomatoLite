@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    background-color: theme("colors.paper");
+  }
+
+  body {
+    background-color: theme("colors.paper");
+    color: theme("colors.ink");
+  }
+
+  ::selection {
+    background-color: theme("colors.accent-soft");
+    color: theme("colors.ink");
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.accent");
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-muted;
+  }
+
+  .quiet-link {
+    @apply text-sm font-medium text-ink underline decoration-line decoration-1 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
+  }
+}
